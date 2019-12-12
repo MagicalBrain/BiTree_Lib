@@ -8,6 +8,7 @@
 #define PCH_H
 
 // 添加要在此处预编译的标头
+#include <stdio.h>
 #include "MyBiTree.h"
 #include <malloc.h>
 

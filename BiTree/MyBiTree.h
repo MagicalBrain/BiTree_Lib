@@ -2,6 +2,12 @@
 
 #define WIN32_LEAN_AND_MEAN             // 从 Windows 头文件中排除极少使用的内容
 
+#define TRUE 1
+#define FALSE 0
+
+#define OK 1
+#define ERROR 0
+
 typedef int Status;
 
 #define TElemType char
@@ -42,3 +48,14 @@ TriTree MakeBiTree_3(TElemType e, TriTree L, TriTree R, TriTree P);
 
 TriTree CreatBiTree_3(char* defBT, int& i);
 //用先序遍历来构造二叉树，defBT为描述序列,i为defBT的位标
+
+//遍历输出函数
+Status Visit(TElemType e);
+
+Status PreOrderTraverse(BiTree T, Status(*Visit)(TElemType e));
+//visit是对结点操作的应用函数，
+//先序遍历，对每个节点调用一次应用函数
+//调用失败就整个函数失败
+
+//三叉树的先序递归遍历
+Status PreOrderTraverse(TriTree T, Status(*Visit)(TElemType e));

@@ -114,3 +114,44 @@ TriTree CreatBiTree_3(char* defBT, int& i)
 	return T;
 }
 
+//遍历输出函数
+Status Visit(TElemType e)
+{
+	printf("%c", e);
+	return OK;
+}
+
+Status PreOrderTraverse(BiTree T, Status(*Visit)(TElemType e))
+//visit是对结点操作的应用函数，
+//先序遍历，对每个节点调用一次应用函数
+//调用失败就整个函数失败
+{
+	if (T)
+	{
+		if (Visit(T->data))
+			if (PreOrderTraverse(T->lchild, Visit))
+				if (PreOrderTraverse(T->rchild, Visit))
+					return OK;
+		return ERROR;
+	}
+	else
+		return OK;
+}
+
+//三叉树的先序递归遍历
+Status PreOrderTraverse(TriTree T, Status(*Visit)(TElemType e))
+//visit是对结点操作的应用函数，
+//先序遍历，对每个节点调用一次应用函数
+//调用失败就整个函数失败
+{
+	if (T)
+	{
+		if (Visit(T->data))
+			if (PreOrderTraverse(T->lchild, Visit))
+				if (PreOrderTraverse(T->rchild, Visit))
+					return OK;
+		return ERROR;
+	}
+	else
+		return OK;
+}
