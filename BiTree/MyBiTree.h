@@ -59,3 +59,40 @@ Status PreOrderTraverse(BiTree T, Status(*Visit)(TElemType e));
 
 //三叉树的先序递归遍历
 Status PreOrderTraverse(TriTree T, Status(*Visit)(TElemType e));
+
+Status InOrderTraverse(BiTree T, Status(*Visit)(TElemType e));
+//中序遍历
+
+//三叉树的中序递归遍历
+Status InOrderTraverse(TriTree T, Status(*Visit)(TElemType e));
+
+//三叉树的中序非递归遍历
+void InOrder_0(TriTree PT, void(*visit)(TElemType));
+/* 不使用栈，非递归中序遍历二叉树PT，  */
+/* 对每个结点的元素域data调用函数visit */
+
+Status PostOrderTraverse(BiTree T, Status(*Visit)(TElemType e));
+//后序遍历
+
+//三叉树的后序递归遍历
+Status PostOrderTraverse(TriTree T, Status(*Visit)(TElemType e));
+//后序遍历
+
+void PostOrder(TriTree T, void(*visit)(TElemType));
+/* 不使用栈，非递归后序遍历二叉树T，   */
+/* 对每个结点的元素域data调用函数visit */
+
+//判断两二叉树是否相似
+Status like(BiTree B1, BiTree B2);
+
+void ExchangeSubTree(BiTree& T);
+/* 将二叉树中所有结点的左、右子树相互交换 */
+
+int Depthx(BiTree T, TElemType x);
+/* 求二叉树中以值为x的结点为根的子树深度 */
+
+/*
+* 销毁二叉树函数，
+* 貌似 有问题
+*/
+void DestroyBiTree(BiTree& T);
